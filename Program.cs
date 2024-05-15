@@ -29,13 +29,12 @@ namespace SnapMe
                 string imageName = uidoc.ActiveView.Name;
                 // All images exported have a suffix followed by an index
                 string searchName_underscore = imageName + "_";
-                string search_suffix = ".PNG";
+                string search_suffix = ".png";
 
                 // the user can select the directory on his/her own from the inteface
                 string fileDirectory = @"C:\\Users\\Symon Kipkemei\\Desktop\";
 
                 int maxNumber = DirectoryChecker(fileDirectory, searchName_underscore, search_suffix);
-                TaskDialog.Show("revit", $"{maxNumber}");
                 int nextNum = maxNumber + 1;
 
                 string filepath = fileDirectory + searchName_underscore + nextNum + search_suffix;
@@ -96,12 +95,11 @@ namespace SnapMe
                 string fileNamePrefix = prefix_suffix[0];
                 string fileNameSuffix = prefix_suffix[1];
 
-
-
                 if (searchName == fileNamePrefix)
                 {
+                  
                     int fileNameSuffix_int = int.Parse(fileNameSuffix);
-
+                    
                     //check the number of the prefix
                     if (fileNameSuffix_int > maxNumber)
                     {
