@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>SnapMe</Name>
+		<Assembly>F:\BIMHABITAT\SOFTWARES\SnapMe\bin\Debug\SnapMe.dll</Assembly>
+		<AddInId>5960E441-597B-4A6F-98C8-E9C706A37A44</AddInId>
+		<FullClassName>SnapMe.App</FullClassName>
+		<VendorId>Symon Kipkemei</VendorId>
+		<VendorDescription>mas con menos</VendorDescription>
+	</AddIn>
+</RevitAddIns>
+
