@@ -71,7 +71,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="snapme.png" />
+    <Resource Include="snapme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

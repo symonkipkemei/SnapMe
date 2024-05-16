@@ -48,7 +48,7 @@ namespace SnapMe
                 
                 SaveDirectoryToRevit(selectedDirectory);
                 Close();
-                TaskDialog.Show("RevitImageSaver", $"Directory saved: {selectedDirectory}");
+              
             }
             else
             {

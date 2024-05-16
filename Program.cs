@@ -24,8 +24,6 @@ namespace SnapMe
             RibbonPanel ribbonPanel = application.CreateRibbonPanel("SnapMe");
             string assembly = Assembly.GetExecutingAssembly().Location;
 
-
-            TaskDialog.Show("REVIT", assembly);
             //Button data
             PushButtonData data = new PushButtonData("SnapMe", "SnapMe", assembly, "SnapMe.Program");
             
@@ -82,8 +80,7 @@ namespace SnapMe
                 window.ShowDialog();
 
                 string fileDirectory = SelectedDirectory;
-                TaskDialog.Show("Correct directory", fileDirectory);
-
+  
                 int maxNumber = DirectoryChecker(fileDirectory, searchName_underscore, search_suffix);
                 int nextNum = maxNumber + 1;
 
@@ -100,7 +97,7 @@ namespace SnapMe
                 return Result.Failed;
             }
 
-            TaskDialog.Show("Success", "3D view exported successfully!");
+            TaskDialog.Show("Success", $"View exported successfully!");
             return Result.Succeeded;
         }
 
