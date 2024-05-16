@@ -18,6 +18,10 @@ namespace SnapMe
 
     public class Program : IExternalCommand
     {
+
+        // store our directory information
+        public static string SelectedDirectory { get; set; }
+
         // Main method
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -32,12 +36,17 @@ namespace SnapMe
                 string search_suffix = ".png";
 
                 // the user can select the directory on his/her own from the inteface
-                string fileDirectory = @"C:\\Users\\Symon Kipkemei\\Desktop\";
+                //instantiate the directory selection window
+                RevitImageSaver window = new RevitImageSaver(); 
+                window.ShowDialog();
+
+                string fileDirectory = SelectedDirectory;
+                TaskDialog.Show("Correct directory", fileDirectory);
 
                 int maxNumber = DirectoryChecker(fileDirectory, searchName_underscore, search_suffix);
                 int nextNum = maxNumber + 1;
 
-                string filepath = fileDirectory + searchName_underscore + nextNum + search_suffix;
+                string filepath = fileDirectory + @"\" + searchName_underscore + nextNum + search_suffix;
 
                 ImageExportOptions export = ExportSettings(filepath);
                 doc.ExportImage(export);

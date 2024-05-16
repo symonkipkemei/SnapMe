@@ -1,0 +1,15 @@
+﻿<Window x:Class="SnapMe.RevitImageSaver"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SnapMe"
+             mc:Ignorable="d" 
+             Title="Revit Image Saver" Height="200" Width="400">
+    <Grid>
+        <Label Content="Select Directory:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <TextBox x:Name="DirectoryTextBox" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,40,0,0" Width="300" IsReadOnly="True" />
+        <Button Name="BrowseButton" Content="Browse.." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,40,0,0" Width="60" Click="BrowseButton_Click" />
+        <Button Name="SaveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,80,0,0" Width="80" Click="SaveButton_Click"/>
+    </Grid>
+</Window>
