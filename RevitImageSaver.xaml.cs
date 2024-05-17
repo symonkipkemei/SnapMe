@@ -45,8 +45,8 @@ namespace SnapMe
             string selectedDirectory = DirectoryTextBox.Text;
             if (!string.IsNullOrWhiteSpace(selectedDirectory)) 
             {
-                
-                SaveDirectoryToRevit(selectedDirectory);
+
+                SaveDirectoryToSettingsData(selectedDirectory);
                 Close();
               
             }
@@ -58,9 +58,9 @@ namespace SnapMe
 
         }
 
-        private void SaveDirectoryToRevit(string selectedDirectory)
+        private void SaveDirectoryToSettingsData(string selectedDirectory)
         {
-            CommandSnap.SelectedDirectory = selectedDirectory;
+            SettingsData.FolderDirectory = selectedDirectory;
         }
     }
 }

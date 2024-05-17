@@ -65,6 +65,7 @@
     <Compile Include="RevitImageSaver.xaml.cs">
       <DependentUpon>RevitImageSaver.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingsData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="RevitImageSaver.xaml">
@@ -73,9 +74,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="snapme.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="snapme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

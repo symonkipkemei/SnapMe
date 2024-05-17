@@ -16,8 +16,7 @@ namespace SnapMe
 
     public class CommandSnap: IExternalCommand
     {
-        // store our directory information
-        public static string SelectedDirectory { get; set; }
+        
 
         // Main method
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
@@ -31,18 +30,13 @@ namespace SnapMe
                 // All images exported have a suffix followed by an index
                 string searchName_underscore = imageName + "_";
                 string search_suffix = ".png";
-
-                // the user can select the directory on his/her own from the inteface
-                //instantiate the directory selection window
-                RevitImageSaver window = new RevitImageSaver();
-                window.ShowDialog();
-
-                string fileDirectory = SelectedDirectory;
+                string fileDirectory = SettingsData.FolderDirectory;
 
                 int maxNumber = DirectoryChecker(fileDirectory, searchName_underscore, search_suffix);
                 int nextNum = maxNumber + 1;
 
                 string filepath = fileDirectory + @"\" + searchName_underscore + nextNum + search_suffix;
+
 
                 ImageExportOptions export = ExportSettings(filepath);
                 doc.ExportImage(export);
