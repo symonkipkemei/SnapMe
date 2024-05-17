@@ -60,7 +60,7 @@ namespace SnapMe
 
         private void SaveDirectoryToRevit(string selectedDirectory)
         {
-            Program.SelectedDirectory = selectedDirectory;
+            CommandSnap.SelectedDirectory = selectedDirectory;
         }
     }
 }

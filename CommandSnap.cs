@@ -1,63 +1,21 @@
-﻿using System;
+﻿using Autodesk.Revit.Attributes;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Autodesk.Revit.UI;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.Attributes;
-using System.Reflection;
-using System.Windows.Media.Imaging;
 
 namespace SnapMe
 {
-    
-
-
-    public class App : IExternalApplication
-    {
-
-        private void AddRibbonButton(UIControlledApplication application)
-        {
-            // Ribbon Panel
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel("SnapMe");
-            string assembly = Assembly.GetExecutingAssembly().Location;
-
-            //Button data
-            PushButtonData data = new PushButtonData("SnapMe", "SnapMe", assembly, "SnapMe.Program");
-            
-
-            PushButton button = ribbonPanel.AddItem(data) as PushButton;
-            button.ToolTip = "Automatically snap images like a pro";
-            Uri uri = new Uri("pack://application:,,,/SnapMe;component/snapme.png");
-            BitmapImage image = new BitmapImage(uri);
-            button.LargeImage = image;
-        }
-
-        public Result OnShutdown(UIControlledApplication application)
-        {
-            return Result.Succeeded;
-        }
-
-        public Result OnStartup(UIControlledApplication application)
-        {
-            AddRibbonButton(application);
-
-            return Result.Succeeded;
-        }
-
-
-
-    }
-
     // Attributes
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
 
-    public class Program : IExternalCommand
+    public class CommandSnap: IExternalCommand
     {
-
         // store our directory information
         public static string SelectedDirectory { get; set; }
 
@@ -76,11 +34,11 @@ namespace SnapMe
 
                 // the user can select the directory on his/her own from the inteface
                 //instantiate the directory selection window
-                RevitImageSaver window = new RevitImageSaver(); 
+                RevitImageSaver window = new RevitImageSaver();
                 window.ShowDialog();
 
                 string fileDirectory = SelectedDirectory;
-  
+
                 int maxNumber = DirectoryChecker(fileDirectory, searchName_underscore, search_suffix);
                 int nextNum = maxNumber + 1;
 
@@ -88,7 +46,7 @@ namespace SnapMe
 
                 ImageExportOptions export = ExportSettings(filepath);
                 doc.ExportImage(export);
-                
+
             }
 
             catch (Exception ex)
@@ -144,9 +102,9 @@ namespace SnapMe
 
                 if (searchName == fileNamePrefix)
                 {
-                  
+
                     int fileNameSuffix_int = int.Parse(fileNameSuffix);
-                    
+
                     //check the number of the prefix
                     if (fileNameSuffix_int > maxNumber)
                     {
@@ -195,4 +153,5 @@ namespace SnapMe
         }
 
     }
+
 }
