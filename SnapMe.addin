@@ -6,7 +6,12 @@
 		<AddInId>5960E441-597B-4A6F-98C8-E9C706A37A44</AddInId>
 		<FullClassName>SnapMe.App</FullClassName>
 		<VendorId>Symon Kipkemei</VendorId>
-		<VendorDescription>mas con menos</VendorDescription>
+		<VendorDescription> SnapMe Inc Publisher: Symon Kipkemei Issuer: Symon Kipkemei</VendorDescription>
+		<Description>This add in allows you to snap the best pieces of your BIM models with high precision and quality </Description>
+		<LanguageType>Managed</LanguageType>
+		<VendorURL>https://www.formode.ke</VendorURL>
+		<Contact>symon@formode.ke</Contact>
+		
 	</AddIn>
 </RevitAddIns>
 
