@@ -36,7 +36,7 @@ namespace SnapMe
             PushButton buttonSe = ribbonPanel.AddItem(dataSe) as PushButton;
             buttonSe.ToolTip = "Set the folder directory for your project";
             Uri uriSe = new Uri("pack://application:,,,/SnapMe;component/settings.png");
-            BitmapImage imageSe = new BitmapImage(uri);
+            BitmapImage imageSe = new BitmapImage(uriSe);
             buttonSe.LargeImage = imageSe;
 
 
