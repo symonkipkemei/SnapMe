@@ -27,7 +27,7 @@ the intent is to bring the best out of your BIM models.
 
 Currently snapping your revit model using the Windows Snipping tool is limited due to its limited resolution.
 Exporting images using ExportImage tool in revit is ideal but a tedious process as you have to input 
-all the image settings every time you export. 
+all the image settings, name the image and select the folder every time you export. 
 
 SnapMe simplifies and enhances the process by separating the settings and the Snap process.
 You just input your image settings (resolution & folder directory) once in every live revit session 
@@ -45,14 +45,21 @@ This way, new possibilities emerge:
     2.  Choosing image folder directory, you only choose once!
     3.  Naming images, SnapMe names them for you chronologically!
 - Overlay different elements/files/styles without changing the export view.
-- snap high quality images in real time!
+- Snap high quality images in real time!
 
 
-## Future updates will include:
+## 📦 Future updates will include:
 
  -  Add all Image settings on the settings command button.
  -  Accommodate predetermined Graphic Styles on 2D & 3D 
  -  Create white clay render styles on 3D views using OpenAi Stable diffusion
+
+
+ ## ⌨️ Usage Guide
+
+[![Watch my YouTube Video](https://img.youtube.com/vi/dZoG7zUt-_c/maxresdefault.jpg)](https://www.youtube.com/watch?v=dZoG7zUt-_c)
+
+
 
 ## ⚙️ Installation
 Please follow last release at section [Release](https://github.com/symon_kipkemei/SnapMe/releases/latest)
