@@ -41,9 +41,9 @@ This way, new possibilities emerge:
 ## 📦 Some feature include:
 
 - Reduce the repetitive process of:
-    1.  Adjusting export image settings, you only set them once!
-    2.  Choosing image folder directory, you only choose once!
-    3.  Naming images, SnapMe names them for you chronologically!
+    -  Adjusting export image settings, you only set them once!
+    - Choosing image folder directory, you only choose once!
+    - Naming images, SnapMe names them for you chronologically!
 - Overlay different elements/files/styles without changing the export view.
 - Snap high quality images in real time!
 
@@ -56,6 +56,8 @@ This way, new possibilities emerge:
 
 
  ## ⌨️ Usage Guide
+
+Below is a video illustration on how the tool works. Enjoy!
 
 [![Watch my YouTube Video](https://img.youtube.com/vi/dZoG7zUt-_c/maxresdefault.jpg)](https://www.youtube.com/watch?v=dZoG7zUt-_c)
 
