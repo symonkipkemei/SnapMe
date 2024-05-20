@@ -64,7 +64,7 @@ Below is a video illustration on how the tool works. Enjoy!
 
 
 ## ⚙️ Installation
-Please follow last release at section [Release](https://github.com/symon_kipkemei/SnapMe/releases/latest)
+Please follow last release at section [Release](https://github.com/symonkipkemei/SnapMe/releases)
 
 
 ### Version support : From Revit 2020 to Revit 2025.
