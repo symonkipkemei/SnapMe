@@ -2,16 +2,19 @@
 <RevitAddIns>
 	<AddIn Type="Application">
 		<Name>SnapMe</Name>
-		<Assembly>F:\BIMHABITAT\SOFTWARES\SnapMe\bin\Debug\SnapMe.dll</Assembly>
+		<Assembly>".\SnapMe.dll"</Assembly>
 		<AddInId>5960E441-597B-4A6F-98C8-E9C706A37A44</AddInId>
 		<FullClassName>SnapMe.App</FullClassName>
 		<VendorId>Symon Kipkemei</VendorId>
-		<VendorDescription> SnapMe Inc Publisher: Symon Kipkemei Issuer: Symon Kipkemei</VendorDescription>
+		<VendorDescription> symon@formode.ke</VendorDescription>
 		<Description>This add in allows you to snap the best pieces of your BIM models with high precision and quality </Description>
+		<Publisher> Symon Kipkemei</Publisher>
+		<Issuer>Symon Kipkemei</Issuer>
 		<LanguageType>Managed</LanguageType>
 		<VendorURL>https://www.formode.ke</VendorURL>
 		<Contact>symon@formode.ke</Contact>
 		
 	</AddIn>
 </RevitAddIns>
+
 
