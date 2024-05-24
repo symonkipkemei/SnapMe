@@ -53,6 +53,14 @@ namespace SnapMe
             return Result.Succeeded;
         }
 
+        public bool RemoveLevelLines3D(View activeView3D)
+        {
+            // Get visibility settings for the active view
+
+
+            return false;
+        }
+
         public ImageExportOptions ExportSettings(string filePath)
         {
 
