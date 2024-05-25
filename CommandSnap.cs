@@ -53,12 +53,33 @@ namespace SnapMe
             return Result.Succeeded;
         }
 
-        public bool RemoveLevelLines3D(View activeView3D)
+        public void HideLevelLines3D(View activeView3D, Document doc)
         {
-            // Get visibility settings for the active view
+            // get at least of all levels in active view
+            ElementId viewId = activeView3D.Id;
 
+            FilteredElementCollector collector = new FilteredElementCollector(doc, viewId);
+            ICollection<Element> LevelElements = collector.OfClass(typeof(Level)).ToElements();
+            
+            List<ElementId> levelIds = new List<ElementId>();
 
-            return false;
+            foreach(Element element in LevelElements)
+            {
+                levelIds.Add(element.Id);
+            }
+
+            // check if level Id is empty if not pick the first Id in the list
+
+            if(levelIds.Count > 0)
+            {
+                //first item in list
+                ElementId levelId1 = levelIds.First();
+
+                // Get visibility settings for the active view
+                activeView3D.SetCategoryHidden(levelId1, false);
+
+            }
+
         }
 
         public ImageExportOptions ExportSettings(string filePath)
