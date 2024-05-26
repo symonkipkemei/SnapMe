@@ -26,8 +26,19 @@ namespace SnapMe
 
             try
             {
-                string imageName = uidoc.ActiveView.Name;
+
+                View currentView = uidoc.ActiveView;
+                // check if 3D view and apply giza styles before exporting the image
+
+                if (currentView is View3D) 
+                {
+                    GizaStyles(currentView, doc);
+                
+                }
+
                 // All images exported have a suffix followed by an index
+
+                string imageName = currentView.Name;
                 string searchName_underscore = imageName + "_";
                 string search_suffix = ".png";
                 string fileDirectory = SettingsData.FolderDirectory;
@@ -53,35 +64,38 @@ namespace SnapMe
             return Result.Succeeded;
         }
 
-        public void HideLevelLines3D(View activeView3D, Document doc)
+        public void GizaStyles(View activeView3D, Document doc)
         {
-            // get at least of all levels in active view
-            ElementId viewId = activeView3D.Id;
 
-            FilteredElementCollector collector = new FilteredElementCollector(doc, viewId);
-            ICollection<Element> LevelElements = collector.OfClass(typeof(Level)).ToElements();
-            
-            List<ElementId> levelIds = new List<ElementId>();
-
-            foreach(Element element in LevelElements)
+            using (Transaction transaction = new Transaction(doc, "Giza Style"))
             {
-                levelIds.Add(element.Id);
+                transaction.Start();
+
+                // Hide visible lvel lines
+                Category category = doc.Settings.Categories.get_Item(BuiltInCategory.OST_Levels);
+                activeView3D.SetCategoryHidden(category.Id, true);
+
+                //Set Graphics display option to  hidden line
+                activeView3D.DisplayStyle = DisplayStyle.HLR;
+
+                // Adjust intensity to sun - 30, light- 25
+
+                activeView3D.SunlightIntensity = 30;
+                activeView3D.ShadowIntensity = 20;
+
+                //Note that the following endpoints are not available yet in Revit API, and therefore
+                //have to be inputed manually to complete the Giza style
+                // Turn on Cast Shadows
+                // Turm on Ambient shadows
+                // Set intensity of ambient shadow - 25
+
+
+                transaction.Commit();
+
             }
-
-            // check if level Id is empty if not pick the first Id in the list
-
-            if(levelIds.Count > 0)
-            {
-                //first item in list
-                ElementId levelId1 = levelIds.First();
-
-                // Get visibility settings for the active view
-                activeView3D.SetCategoryHidden(levelId1, false);
-
-            }
-
         }
 
+      
         public ImageExportOptions ExportSettings(string filePath)
         {
 
